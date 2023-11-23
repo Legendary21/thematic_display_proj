@@ -28,15 +28,27 @@
             <div class="links slide-left"> -->
                 <div class="output" >
                     {% if final_output %}
-                    <h2 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: bisque;margin:40px;font:40px">your mood seems to be {{final_output}}</h2>
-                    <h2 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: bisque;margin:40px;font:40px">what would you prefer?</h2>
+                    <h2 class="quote" id="myQuote"></h2>
+                    <h2 class="finaloutput" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: bisque;margin:40px;font:40px">You seem to be {{final_output}}</h2>
+                    <h2 class="finaloutput" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: bisque;margin:40px;font:40px">What would you prefer?</h2>
                     {% endif %}
                 </div>
-                <a href="http://localhost:5000/movies/{{final_output}}" class="btn">movies</a>
-                <a href="http://localhost:5000/songs/{{final_output}}" class="btn">songs</a>
+                <a href="http://localhost:5000/movies/{{final_output}}" class="btn">Movies</a>
+                <a href="http://localhost:5000/songs/{{final_output}}" class="btn">Songs</a>
             </div>
         </div>
-
     </div>
+
+    <script>
+        if (final_output == 'neutral') {           
+            document.getElementbyId("myQuote").innerHTML = "Your only limit is yourself.";
+        }
+        else if (final_output == 'happy') {
+            document.getElementById("myQuote").innerHTML = "Whoever is happy will make others happy.";
+        }
+        else if (final_output == 'sad') {
+            document.getElementById("myQuote").innerHTML = "The good times of today are the sad thoughts of tomorrow.";
+        }
+    </script>
 </body>
 </html>

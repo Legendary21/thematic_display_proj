@@ -4,10 +4,14 @@
     box-sizing: border-box;
     font-family: 'Poppins',sans-serif;
 }
+
+body {
+    overflow: hidden;
+}
 .header{
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(rgba(5,0,136,0.5),rgba(5,0,136,0.5)),url(Images/img1.jpg);
+    background-image: linear-gradient(#b285ff, #00d4ff);
     background-position: center;
     background-size: cover;
     overflow-x: hidden;
@@ -18,7 +22,7 @@ nav{
     display: flex;
     justify-content: space-between;
     padding: 18px 8%;
-    transition: background 1s;
+    transition: bg 1s;
 }
 
 nav .logo{
@@ -26,7 +30,15 @@ nav .logo{
     align-items: center;
     font-size: 26px;
     font-weight: 600;
-    color: #FFF;
+}
+
+@keyframes bg{
+    0% {
+        background-color:#FFF
+    }
+    100% {
+        background-color: #191919;
+    }
 }
 
 nav .logo img{
@@ -68,7 +80,6 @@ nav:hover ul li a{
 }
 
 .content h1{
-    font-size: 120PX;
     font-weight: 600;
     line-height: 140px;
 }
@@ -89,12 +100,46 @@ nav:hover ul li a{
     text-decoration: none;
 
 }
+    .links a:hover{
+    color: blue;
+
+}
+
 .btn{
-    border: 2px solid #fff;
-    padding: 10px 35px;
-    border-radius: 30px;
-    margin-right: 15px;
-    font-weight: 700;
+    border: 1px solid #3489db;
+    background: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-family: 'Montserrat';
+    cursor: pointer;
+    margin: 10px;
+    background-color: #75B9AF;
+    color: #3498db;
+    transition: 0.8s;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.btn:hover{
+    color: #fff;
+}
+
+.btn::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #3498db;
+    z-index: -1;
+    transition: 0.8s;
+    top: 0;
+    border-radius: 5%;
+}
+
+.btn:hover::before{
+    height: 180%;
 }
 
 .slide-left{
@@ -103,7 +148,7 @@ nav:hover ul li a{
 }
 
 .content h1{
-    font-family: Brush Script MT,cursive;
+    font-family: 'Montserrat';
 }
 
 @keyframes slideleft{
@@ -123,4 +168,124 @@ p.slide-left{
 }
 .links.slide-left{
     animation-delay: 2s;
+    color:blue;
+}
+.output{
+    color:white;
+    font-family:"arial";
+    font-weight: bold;
+    background-image: url("C:/Users/vidhy/Downloads/Black & Beige Minimalist Wavy Lines Pattern Desktop Wallpaper.png");
+    opacity: 0;
+    }
+.output1{
+    margin-top:20px;
+    opacity: 0;
+   color:white;
+    display: inline-block;
+   font-family:"arial";
+   font-weight: bold;
+   }
+
+.ishexp {
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.ishemexp{
+    text-align: center;
+    color: black;
+    position: relative;
+    bottom: 400px;
+    padding: 10px;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+}
+
+.ishemtext {
+    color: black;
+    position: relative;
+    bottom: 370px;
+    padding: 10px;
+    text-align: center;
+    margin: 0;
+    font-size: 25px;
+    font-family: 'Montserrat';
+}
+
+.emotion {
+    font-size: 5em;
+}
+
+ @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@600&display=swap');
+
+.textcontainer {
+    font-size: 60px;
+    text-align: center;
+}
+
+.text_1 {
+  animation: text1;
+}
+
+.text_2 {
+  animation: text2;
+}
+
+.text_1, .text_2 {
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  position: relative;
+  top: 30px;
+  font-family: 'Montserrat';
+  animation-duration: 7s;
+  animation-timing-function: steps(25, end);
+  animation-iteration-count: infinite;
+}
+
+.text_1::after, .text_2::after {
+  content: "|";
+  position: absolute;
+  right: 0;
+  animation: caret infinite;
+  animation-duration: 1s;
+  animation-timing-function: steps(1, end);
+}
+
+@keyframes text2 {
+  0%, 50%, 100% {
+    width: 0;
+  }
+
+  60%, 90% {
+    width: 11.5em;
+  }
+}
+
+@keyframes text1 {
+  0%, 50%, 100% {
+    width: 0;
+  }
+  10%, 40% {
+    width: 16em;
+  }
+}
+
+@keyframes caret {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    height: 500px;
+    width: 1000px;
+    left: 15%;
+    top: 100px;
 }

@@ -42,7 +42,7 @@ def camera():
 
             max_index = np.argmax(predictions[0])
 
-            emotions = ('angry', 'disgust', 'fear', 'happy', 'sad', 'neutral', 'surprise')
+            emotions = ('neutral', 'neutral', 'neutral', 'neutral', 'happy', 'neutral', 'neutral', 'sad', 'sad')
             predicted_emotion = emotions[max_index]
             output.append(predicted_emotion)
             
